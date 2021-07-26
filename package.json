@@ -1,0 +1,47 @@
+{
+  "name": "secure-event-emitter",
+  "version": "1.0.0",
+  "description": "secure-event-emitter is a tiny javascript package that uses restrict rules and mechanisms to build safer and protected event-driven architecture.",
+  "license": "MIT",
+  "homepage": "https://github.com/ruben-arushanyan/secure-event-emitter",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruben-arushanyan/secure-event-emitter"
+  },
+  "bugs": "https://github.com/ruben-arushanyan/secure-event-emitter/issues",
+  "keywords": [
+    "secure-event-emitter",
+    "event-emitter",
+    "events",
+    "event",
+    "trigger",
+    "observer",
+    "listener",
+    "listeners",
+    "emitter",
+    "eventEmitter",
+    "eventDispatche",
+    "emit",
+    "emits",
+    "secure",
+    "secure-emitter",
+    "protected-emitter",
+    "handlers",
+    "javascript"
+  ],
+  "author": "Ruben Arushanyan <ruben.arushanyan24@gmail.com> (https://github.com/ruben-arushanyan)",
+  "main": "src/index.js",
+  "exports": {
+    "./react": "./src/react/index.js"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "publishConfig": {
+    "registry": "https://registry-url"
+  },
+  "npmName": "secure-event-emitter",
+  "devDependencies": {
+    "jest": "^27.0.6"
+  }
+}
