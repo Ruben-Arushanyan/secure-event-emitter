@@ -173,7 +173,7 @@ useListener(emitter, 'event-type', () => {
 
 ```
 
-## Maintainers
+## Authors
 
 - [Ruben Arushanyan](https://github.com/ruben-arushanyan)
 
