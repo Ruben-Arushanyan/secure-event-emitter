@@ -34,8 +34,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "pack": "node scripts/pack.js",
-    "publish": "node scripts/publish.js"
+    "_pack": "node scripts/pack.js",
+    "_publish": "node scripts/publish.js"
   },
   "files": [
     "package.json",
