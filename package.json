@@ -34,8 +34,8 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "pack": "npm run build --if-present; node scripts/pack.js",
-    "publish": "npm run pack --if-present; node scripts/publish.js"
+    "pack": "npm run build --if-present && node scripts/pack.js",
+    "publish": "npm run pack --if-present && node scripts/publish.js"
   },
   "files": [
     "package.json",
