@@ -11,6 +11,7 @@ const packedFiles = packageJson.files || []
 
 const pack = async () => {
     await execPromise(`
+        npm run build --if-present;
         rm -rf ${packedDir};
         mkdir -p ${packedDir};
         cp -a ${packedFiles.join(' ')} ${PACKED_DIR};
