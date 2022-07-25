@@ -10,7 +10,7 @@ const packedDir = path.resolve(cwd, PACKED_DIR)
 
 const publish = async () => {
     await execPromise(`
-        npm run pack --if-present;
+        npm run _pack --if-present;
         cd ${packedDir};
         npm publish;
   `)
