@@ -32,13 +32,17 @@
   ],
   "author": "Ruben Arushanyan <ruben.arushanyan24@gmail.com> (https://www.linkedin.com/in/ruben-arushanyan-42bba9235/)",
   "main": "src/index.js",
-  "exports": {
-    ".": "./src/index.js",
-    "./react": "./src/react/index.js"
-  },
   "scripts": {
-    "test": "jest"
+    "test": "jest",
+    "pack": "npm run build --if-present; node scripts/pack.js",
+    "publish": "npm run pack --if-present; node scripts/publish.js"
   },
+  "files": [
+    "package.json",
+    "README.md",
+    "LICENSE",
+    "src/."
+  ],
   "devDependencies": {
     "jest": "^28.1.3"
   }
