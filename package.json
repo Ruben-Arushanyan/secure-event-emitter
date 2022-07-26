@@ -31,7 +31,7 @@
     "javascript"
   ],
   "author": "Ruben Arushanyan <ruben.arushanyan24@gmail.com> (https://www.linkedin.com/in/ruben-arushanyan-42bba9235/)",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
     "test": "jest",
     "to-pack": "npm run build --if-present; node scripts/to-pack.js",
