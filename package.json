@@ -34,10 +34,10 @@
   "main": "src/index.js",
   "scripts": {
     "test": "jest",
-    "_pack": "node scripts/pack.js",
-    "_publish": "node scripts/publish.js"
+    "to-pack": "npm run build --if-present; node scripts/to-pack.js",
+    "to-npm-publish": "npm run to-pack --if-present; node scripts/to-npm-publish.js"
   },
-  "files": [
+  "packableFiles": [
     "package.json",
     "README.md",
     "LICENSE",
