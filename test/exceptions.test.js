@@ -11,7 +11,7 @@
 ////////////////////////// TEST ////////////////////////////
 const {
     SecureEventEmitter,
-} = require('../src')
+} = require('../.packed')
 
 
 test('Exceptions for constructor', () => {
