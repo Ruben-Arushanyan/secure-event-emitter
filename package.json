@@ -4,11 +4,15 @@
   "description": "SecureEventEmitter is a tiny javascript package that uses restrict rules and mechanisms to build safer and protected event-driven architecture. It's similar to nodejs EventEmitter, but dictates stricter rules to prevent misuse.",
   "license": "MIT",
   "homepage": "https://github.com/ruben-arushanyan/secure-event-emitter",
+  "main": "index.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/ruben-arushanyan/secure-event-emitter"
   },
-  "bugs": "https://github.com/ruben-arushanyan/secure-event-emitter/issues",
+  "bugs": {
+    "url": "https://github.com/ruben-arushanyan/secure-event-emitter/issues",
+    "email": "ruben.arushanyan24@gmail.com"
+  },
   "keywords": [
     "secure-event-emitter",
     "private-event-emitter",
@@ -30,10 +34,18 @@
     "handlers",
     "javascript"
   ],
-  "author": "Ruben Arushanyan <ruben.arushanyan24@gmail.com> (https://www.linkedin.com/in/ruben-arushanyan-42bba9235/)",
-  "main": "index.js",
+  "author": {
+    "name": "Ruben Arushanyan",
+    "email": "ruben.arushanyan24@gmail.com",
+    "url": "https://www.linkedin.com/in/ruben-arushanyan-42bba9235/"
+  },
+  "funding": {
+    "type": "individual",
+    "url": "https://github.com/sponsors/Ruben-Arushanyan"
+  },
   "scripts": {
-    "test": "jest",
+    "test": "npm run to-pack --if-present; node scripts/test.js",
+    "build": "node scripts/build.js",
     "to-pack": "npm run build --if-present; node scripts/to-pack.js",
     "to-npm-publish": "npm run to-pack --if-present; node scripts/to-npm-publish.js"
   },
@@ -41,9 +53,14 @@
     "package.json",
     "README.md",
     "LICENSE",
-    "src/."
+    "dist/."
   ],
   "devDependencies": {
+    "@babel/cli": "^7.18.9",
+    "@babel/core": "^7.18.9",
+    "@babel/preset-env": "^7.18.9",
+    "@babel/preset-react": "^7.18.6",
     "jest": "^28.1.3"
-  }
+  },
+  "sideEffects": false
 }
