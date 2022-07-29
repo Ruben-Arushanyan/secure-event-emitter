@@ -1,6 +1,6 @@
 
 const {Handler} = require('./handler')
-const {SecureEventEmitter} = require('./secure-event-emitter')
+const {SecureEventEmitter} = require('./SecureEventEmitter')
 const {SingularEventEmitter} = require('./singular-event-emitter')
 const {Payload} = require('./payload')
 
