@@ -13,7 +13,7 @@
 ### basic usage
 
 ```js
-import {SecureEventEmitter} from 'Libs/secure-event-emitter'
+import {SecureEventEmitter} from 'secure-event-emitter'
 
 // create emitterKey
 const emitterKey = Symbol('My Emitter Key')
@@ -40,7 +40,7 @@ myEmitter.unlock(emitterKey).emit('xyz', 11)
 ### validatorFunction usage
 
 ```js
-import {SecureEventEmitter} from 'Libs/secure-event-emitter'
+import {SecureEventEmitter} from 'secure-event-emitter'
 
 // create emitterKey
 const emitterKey = Symbol('My Emitter Key')
@@ -78,7 +78,7 @@ myEmitter.unlock(emitterKey).emit('xyz', '2021') // TypeError: My Emitter payloa
 ### basic usage
 
 ```js
-import {SingularEventEmitter} from 'Libs/secure-event-emitter'
+import {SingularEventEmitter} from 'secure-event-emitter'
 
 // create emitterKey
 const emitterKey = Symbol('My Singular Emitter Key')
@@ -109,7 +109,7 @@ onFoo.unlock(emitterKey).emit(2022)
 ### basic usage
 
 ```js
-import {Payload} from 'Libs/secure-event-emitter'
+import {Payload} from 'secure-event-emitter'
 
 // first argument is an origin, can be only symbol type and required
 const payload_1 = new Payload(Symbol('My Origin 1'), 1, 2, 3)
@@ -141,7 +141,7 @@ const payload_2 = new Payload(Symbol('My Origin 2'), 'a', 'b')
 ### basic usage
 
 ```js
-import {Handler, Payload} from 'Libs/secure-event-emitter'
+import {Handler, Payload} from 'secure-event-emitter'
 
 const myHandler = Handler((payload) => {
     // ...
@@ -160,7 +160,7 @@ myHandler(2021) // TypeError('handler argument type must be a [[Payload]] class 
 ### basic usage
 
 ```js
-import {useListener} from 'Libs/secure-event-emitter/react'
+import {useListener} from 'secure-event-emitter/react'
 
 // ...
 // ...
