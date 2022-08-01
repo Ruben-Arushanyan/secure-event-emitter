@@ -9,13 +9,9 @@
 
 
 ////////////////////////// TEST ////////////////////////////
-const {
-    SecureEventEmitter,
-} = require('../.packed')
+const {SecureEventEmitter} = require('../../.packed')
 
-
-
-test('Exceptions for [on] method', () => {
+test('SecureEventEmitter Basic Test', () => {
     const emitterKey = Symbol('my emitter key')
     let emitter = new SecureEventEmitter(
         [
