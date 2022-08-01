@@ -3,18 +3,13 @@ const {
     isArray,
     isUndefined,
     isFunction,
-    isDescribedSymbol,
     isString,
     isValidEventType,
 } = require('./utils');
 
 const error_if_invalid_emitterKey = (emitterKey) => {
-    if (!isSymbol(emitterKey)) {
-        throw new TypeError('SecureEventEmitter emitterKey must be a Symbol type');
-    }
-
-    if (!isDescribedSymbol(emitterKey)) {
-        throw new TypeError('SecureEventEmitter emitterKey symbol description is required. Try Symbol(description)');
+    if (!isSymbol(emitterKey) && !isString(emitterKey)) {
+        throw new TypeError('SecureEventEmitter emitterKey must be a Symbol or String type');
     }
 };
 

@@ -30,21 +30,12 @@ test('Exceptions for constructor', () => {
 
     expect(() => new SecureEventEmitter(
         ["ab-ab", "ab"],
-        "emitter key"
-    )).toThrow(/SecureEventEmitter emitterKey must be a Symbol type/)
+        {},
+    )).toThrow(/SecureEventEmitter emitterKey must be a Symbol or String type/)
     expect(() => new SecureEventEmitter(
         ["ab-ab", "ab"],
         45
-    )).toThrow(/SecureEventEmitter emitterKey must be a Symbol type/)
-    expect(() => new SecureEventEmitter(
-        ["ab-ab", "ab"],
-        Symbol()
-    )).toThrow(/SecureEventEmitter emitterKey symbol description is required/)
-    expect(() => new SecureEventEmitter(
-        ["ab-ab", "ab"],
-        Symbol("")
-    )).toThrow(/SecureEventEmitter emitterKey symbol description is required/)
-
+    )).toThrow(/SecureEventEmitter emitterKey must be a Symbol or String type/)
 
     expect(() => new SecureEventEmitter(
         ["ab-ab", "ab"],
