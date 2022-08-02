@@ -1,4 +1,4 @@
-# Secure EventEmitter
+# Secure Event Emitter
 
 **secure-event-emitter** is a tiny javascript package that uses restrict rules and mechanisms to build safer and protected event-driven architecture. It's similar to nodejs [EventEmitter](https://nodejs.org/api/events.html), but dictates stricter rules to prevent misuse.
 
