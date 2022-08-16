@@ -14,8 +14,8 @@
 
 > ### `new SecureEventEmitter(types, emitterKey, [validator])`
 
-- `types` **string[]**  : All event types․ Example: `['event-1', 'event-2']`
-- `emitterKey` **string | symbol** : Emitter Key: Without which we cannot perform `.emit()`. Example: `'my_emitter_key'` or `Symbol()`
+- `types` **string[]**  : All event types․
+- `emitterKey` **string | symbol** : Emitter Key: Without which we cannot perform **.emit()**
 - `validator` **function**: Function for validating emitted values
 
 ```js
