@@ -22,24 +22,24 @@
 import {SecureEventEmitter} from 'secure-event-emitter'
 
 // create emitterKey
-const emitterKey = Symbol('My Emitter Key')
+const emitterKey = Symbol()
 
 // create myEmitter instance
 const myEmitter = new SecureEventEmitter(
-    ['abc', 'xyz'], // all event types
-    emitterKey      // emitter key is an any Symbol type value
+    ['event-1', 'event-2'], // all event types
+    emitterKey      // emitter key is an any Symbol or String type value
 )
 
 // add listeners
-myEmitter.on('abc', (a, b) => {
-    // ...
+myEmitter.on('event-1', (a, b) => {
+    console.log(a, b)
 })
-myEmitter.on('xyz', (x) => {
-    // ...
+myEmitter.on('event-2', (x) => {
+    console.log(x)
 })
 
-myEmitter.unlock(emitterKey).emit('abc', 2021, 2022)
-myEmitter.unlock(emitterKey).emit('xyz', 11)
+myEmitter.unlock(emitterKey).emit('event-1', 2021, 2022)
+myEmitter.unlock(emitterKey).emit('event-2', 123)
 
 ```
 
