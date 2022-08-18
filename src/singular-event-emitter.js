@@ -1,4 +1,4 @@
-const {SecureEventEmitter} = require('./secure-event-emitter');
+const {SecureEventEmitter} = require('./SecureEventEmitter');
 
 const EVENT_TYPE = 'singular-event';
 

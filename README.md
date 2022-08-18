@@ -1,4 +1,4 @@
-# Secure EventEmitter
+# Secure Event Emitter
 
 **secure-event-emitter** is a tiny javascript package that uses restrict rules and mechanisms to build safer and protected event-driven architecture. It's similar to nodejs [EventEmitter](https://nodejs.org/api/events.html), but dictates stricter rules to prevent misuse.
 
@@ -10,64 +10,71 @@
 
 ## Usage
 
-### basic usage
+### Class:  `SecureEventEmitter`
+
+> ### `new SecureEventEmitter(types, emitterKey, [validator])`
+
+- `types` **string[]**  : All event types․
+- `emitterKey` **string | symbol** : Emitter Key: Without which we cannot perform **.emit()**
+- `validator` **function**: Function for validating emitted values
 
 ```js
-import {SecureEventEmitter} from 'Libs/secure-event-emitter'
+import {SecureEventEmitter} from 'secure-event-emitter'
 
 // create emitterKey
-const emitterKey = Symbol('My Emitter Key')
+const emitterKey = Symbol()
 
 // create myEmitter instance
 const myEmitter = new SecureEventEmitter(
-    ['abc', 'xyz'], // all event types
-    emitterKey      // emitter key is an any Symbol type value
+    ['event-1', 'event-2'], // all event types
+    emitterKey      // emitter key is an any Symbol or String type value
 )
 
 // add listeners
-myEmitter.on('abc', (a, b) => {
-    // ...
+myEmitter.on('event-1', (a, b) => {
+    console.log(a, b)
 })
-myEmitter.on('xyz', (x) => {
-    // ...
+myEmitter.on('event-2', (x) => {
+    console.log(x)
 })
 
-myEmitter.unlock(emitterKey).emit('abc', 2021, 2022)
-myEmitter.unlock(emitterKey).emit('xyz', 11)
+myEmitter.unlock(emitterKey).emit('event-1', 2021, 2022)
+myEmitter.unlock(emitterKey).emit('event-2', 123)
 
 ```
 
-### validatorFunction usage
+### Validator Function
 
 ```js
-import {SecureEventEmitter} from 'Libs/secure-event-emitter'
+import {SecureEventEmitter} from 'secure-event-emitter'
 
 // create emitterKey
-const emitterKey = Symbol('My Emitter Key')
-const validatorFunction = (payload) => {
-    if (typeof payload === 'number') {
-        return
+const emitterKey = Symbol()
+
+// create validator function
+const validator = (x) => {
+    if (typeof x !== 'number') {
+        return 'Can emit only numbers!' // error message
     }
-    return 'My Emitter payload can be an only number type'   // error message
 }
 
 // create myEmitter instance
 const myEmitter = new SecureEventEmitter(
-    ['abc', 'xyz'], // all event types
-    emitterKey,     // emitter key is an any Symbol type value
-    validatorFunction,
+    ['event-1', 'event-2'],
+    emitterKey,
+    validator,
 )
 
 // add listeners
-myEmitter.on('abc', (x) => {
-    // ...
+myEmitter.on('event-1', (x) => {
+    console.log(x)
 })
-myEmitter.on('xyz', (x) => {
-    // ...
+myEmitter.on('event-2', (x) => {
+    console.log(x)
 })
 
-myEmitter.unlock(emitterKey).emit('abc', 2021)
-myEmitter.unlock(emitterKey).emit('xyz', '2021') // TypeError: My Emitter payload can be an only number type
+myEmitter.unlock(emitterKey).emit('event-1', 2021)
+myEmitter.unlock(emitterKey).emit('event-2', '2021') // TypeError: Can emit only numbers!
 
 ```
 
@@ -78,7 +85,7 @@ myEmitter.unlock(emitterKey).emit('xyz', '2021') // TypeError: My Emitter payloa
 ### basic usage
 
 ```js
-import {SingularEventEmitter} from 'Libs/secure-event-emitter'
+import {SingularEventEmitter} from 'secure-event-emitter'
 
 // create emitterKey
 const emitterKey = Symbol('My Singular Emitter Key')
@@ -109,7 +116,7 @@ onFoo.unlock(emitterKey).emit(2022)
 ### basic usage
 
 ```js
-import {Payload} from 'Libs/secure-event-emitter'
+import {Payload} from 'secure-event-emitter'
 
 // first argument is an origin, can be only symbol type and required
 const payload_1 = new Payload(Symbol('My Origin 1'), 1, 2, 3)
@@ -141,7 +148,7 @@ const payload_2 = new Payload(Symbol('My Origin 2'), 'a', 'b')
 ### basic usage
 
 ```js
-import {Handler, Payload} from 'Libs/secure-event-emitter'
+import {Handler, Payload} from 'secure-event-emitter'
 
 const myHandler = Handler((payload) => {
     // ...
@@ -160,7 +167,7 @@ myHandler(2021) // TypeError('handler argument type must be a [[Payload]] class 
 ### basic usage
 
 ```js
-import {useListener} from 'Libs/secure-event-emitter/react'
+import {useListener} from 'secure-event-emitter/react'
 
 // ...
 // ...
