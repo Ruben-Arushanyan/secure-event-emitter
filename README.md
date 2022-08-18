@@ -43,37 +43,38 @@ myEmitter.unlock(emitterKey).emit('event-2', 123)
 
 ```
 
-### validatorFunction usage
+### Validator Function
 
 ```js
 import {SecureEventEmitter} from 'secure-event-emitter'
 
 // create emitterKey
-const emitterKey = Symbol('My Emitter Key')
-const validatorFunction = (payload) => {
-    if (typeof payload === 'number') {
-        return
+const emitterKey = Symbol()
+
+// create validator function
+const validator = (x) => {
+    if (typeof x !== 'number') {
+        return 'Can emit only numbers!' // error message
     }
-    return 'My Emitter payload can be an only number type'   // error message
 }
 
 // create myEmitter instance
 const myEmitter = new SecureEventEmitter(
-    ['abc', 'xyz'], // all event types
-    emitterKey,     // emitter key is an any Symbol type value
-    validatorFunction,
+    ['event-1', 'event-2'],
+    emitterKey,
+    validator,
 )
 
 // add listeners
-myEmitter.on('abc', (x) => {
-    // ...
+myEmitter.on('event-1', (x) => {
+    console.log(x)
 })
-myEmitter.on('xyz', (x) => {
-    // ...
+myEmitter.on('event-2', (x) => {
+    console.log(x)
 })
 
-myEmitter.unlock(emitterKey).emit('abc', 2021)
-myEmitter.unlock(emitterKey).emit('xyz', '2021') // TypeError: My Emitter payload can be an only number type
+myEmitter.unlock(emitterKey).emit('event-1', 2021)
+myEmitter.unlock(emitterKey).emit('event-2', '2021') // TypeError: Can emit only numbers!
 
 ```
 
