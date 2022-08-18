@@ -8,11 +8,6 @@ test('SecureEventEmitter - exceptions [constructor]', () => {
     expect(() => new SecureEventEmitter([true])).toThrow(/eventType must be a string/)
     expect(() => new SecureEventEmitter([{a: "hello"}])).toThrow(/eventType must be a string/)
 
-    expect(() => new SecureEventEmitter([""])).toThrow(/eventType must be a valid formated string/)
-    expect(() => new SecureEventEmitter(["aA"])).toThrow(/eventType must be a valid formated string/)
-    expect(() => new SecureEventEmitter(["ab-"])).toThrow(/eventType must be a valid formated string/)
-    expect(() => new SecureEventEmitter(["ab/a"])).toThrow(/eventType must be a valid formated string/)
-    expect(() => new SecureEventEmitter(["ab-ab", "ab--ab"])).toThrow(/eventType must be a valid formated string/)
 
     expect(() => new SecureEventEmitter(
         ["ab-ab", "ab"],

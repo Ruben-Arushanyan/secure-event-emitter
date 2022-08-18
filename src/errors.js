@@ -4,7 +4,6 @@ const {
     isUndefined,
     isFunction,
     isString,
-    isValidEventType,
 } = require('./utils');
 
 const error_if_invalid_emitterKey = (emitterKey) => {
@@ -34,10 +33,6 @@ const error_if_invalid_eventTypes = (eventTypes) => {
 const error_if_invalid_eventType = (eventType) => {
     if (!isString(eventType)) {
         throw new TypeError(`eventType must be a string. \n\n Invalid eventType:\n ${eventType}\n\n`);
-    }
-
-    if (!isValidEventType(eventType)) {
-        throw new TypeError(`eventType must be a valid formated string(lowercase Letters and Hyphen): ${eventType}\n`);
     }
 };
 

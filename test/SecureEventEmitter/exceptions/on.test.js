@@ -14,9 +14,6 @@ test('SecureEventEmitter - exceptions - [on]', () => {
     expect(() => emitter.on(45)).toThrow(/eventType must be a string/)
     expect(() => emitter.on({})).toThrow(/eventType must be a string/)
 
-    expect(() => emitter.on("")).toThrow(/eventType must be a valid formated string/)
-    expect(() => emitter.on("Aa")).toThrow(/eventType must be a valid formated string/)
-
     expect(() => emitter.on("aa")).toThrow(/not exist/)
 
     expect(() => emitter.on("zzz")).toThrow(/listener must be a function/)
