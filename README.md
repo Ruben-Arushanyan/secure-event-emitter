@@ -8,6 +8,12 @@
 - We can not emit events anywhere without emitterKey․
 - We can define a strict payload structure and emitter can only work with that structured data
 
+## Installation
+
+```bash
+npm install secure-event-emitter
+```
+
 ## Usage
 
 ### Class:  `SecureEventEmitter`

@@ -28,7 +28,7 @@ export default function HeroBanner() {
             It's <b>similar</b> to nodejs <b>EventEmitter</b>, but dictates <b>stricter</b> rules to <b>prevent</b> misuse.
         </h2>
         <div className={styles.indexCtas}>
-          <Link className="button button--primary" to="/docs/intro">
+          <Link className="button button--primary" to="/docs/introduction">
             Get Started
           </Link>
           <span className={styles.indexCtasGitHubButtonWrapper}>
