@@ -1,6 +1,5 @@
 ---
 sidebar_position: 1
-description: This description will override the default
 ---
 
 # Introduction
