@@ -103,6 +103,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/Ruben-Arushanyan/secure-event-emitter/edit/master/website/',
+          showLastUpdateAuthor: true,
         },
         blog: false,
         // blog: {
