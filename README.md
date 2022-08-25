@@ -1,4 +1,6 @@
-# Secure Event Emitter
+# [Secure Event Emitter](https://ruben-arushanyan.github.io/secure-event-emitter)
+
+> You can find the full documentation on the [website](https://ruben-arushanyan.github.io/secure-event-emitter)
 
 **secure-event-emitter** is a tiny javascript package that uses restrict rules and mechanisms to build safer and protected event-driven architecture. It's similar to nodejs [EventEmitter](https://nodejs.org/api/events.html), but dictates stricter rules to prevent misuse.
 
@@ -7,6 +9,12 @@
 - All event types that the emitter can use must be defined․
 - We can not emit events anywhere without emitterKey․
 - We can define a strict payload structure and emitter can only work with that structured data
+
+## Installation
+
+```bash
+npm install secure-event-emitter
+```
 
 ## Usage
 
