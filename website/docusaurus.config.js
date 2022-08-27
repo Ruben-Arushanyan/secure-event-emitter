@@ -17,8 +17,8 @@ const additonalInfo = {
 const config = {
   title: 'Secure Event Emitter',
   tagline: `It's similar to nodejs EventEmitter, but dictates stricter rules to prevent misuse.`,
-  url: 'https://ruben-arushanyan.github.io',
-  baseUrl: '/secure-event-emitter/',
+  url: 'https://secure-event-emitter.js.org',
+  baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'images/favicon.ico',
