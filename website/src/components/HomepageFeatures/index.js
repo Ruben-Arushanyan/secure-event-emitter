@@ -4,14 +4,60 @@ import styles from './styles.module.css';
 
 const FeatureList = [
   {
-    title: 'Easy to Use',
-    Svg: require('@site/static/images/features/feature-1.svg').default,
-    description: (
-      <>
-        Lox lava inelu...
-      </>
-    ),
-  }
+    title: 'Secure',
+    Svg: require('@site/static/images/features/secure.svg').default,
+    description: <></>,
+  },
+  {
+    title: 'Simple',
+    Svg: require('@site/static/images/features/simple.svg').default,
+    description: <></>,
+  },
+  {
+    title: 'Predictable',
+    Svg: require('@site/static/images/features/predictable.svg').default,
+    description: <></>,
+  },
+  // {
+  //   title: 'Flexible',
+  //   Svg: require('@site/static/images/features/flexible.svg').default,
+  //   description: <></>,
+  // },
+  // {
+  //   title: 'Powerful',
+  //   Svg: require('@site/static/images/features/powerful.svg').default,
+  //   description: <></>,
+  // },
+  // {
+  //   title: 'Effective',
+  //   Svg: require('@site/static/images/features/effective.svg').default,
+  //   description: <></>,
+  // },
+  // {
+  //   title: 'Debuggable',
+  //   Svg: require('@site/static/images/features/debuggable.svg').default,
+  //   description: <></>,
+  // },
+  // {
+  //   title: 'Encapsulated',
+  //   Svg: require('@site/static/images/features/encapsulated.svg').default,
+  //   description: <></>,
+  // },
+  // {
+  //   title: 'Optimized',
+  //   Svg: require('@site/static/images/features/optimized.svg').default,
+  //   description: <></>,
+  // },
+  // {
+  //   title: 'Fast',
+  //   Svg: require('@site/static/images/features/fast.svg').default,
+  //   description: <></>,
+  // },
+  // {
+  //   title: 'Intuitive',
+  //   Svg: require('@site/static/images/features/intuitive.svg').default,
+  //   description: <></>,
+  // },
 ];
 
 function Feature({Svg, title, description}) {
@@ -32,7 +78,7 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <div className="row">
+        <div className="row justify-content-center">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
