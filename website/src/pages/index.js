@@ -5,7 +5,7 @@ import HeroBanner from '@site/src/components/HeroBanner';
 import AdditonalInfoLog from '@site/src/components/AdditonalInfoLog';
 
 
-// import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import HomepageFeatures from '@site/src/components/HomepageFeatures';
 
 export default function Home() {
   const {
@@ -22,7 +22,7 @@ export default function Home() {
       description={description}
     >
       <HeroBanner />
-      {/* <HomepageFeatures /> */}
+      <HomepageFeatures />
       <AdditonalInfoLog />
     </Layout>
   )
