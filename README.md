@@ -16,15 +16,45 @@
 npm install secure-event-emitter
 ```
 
-## Usage
+## SecureEventEmitter
 
-### Class:  `SecureEventEmitter`
+La la ala lfdfd dfdgdl  gdgd gdgd.
 
-> ### `new SecureEventEmitter(types, emitterKey, [validator])`
+### API
 
-- `types` **string[]**  : All event types․
-- `emitterKey` **string | symbol** : Emitter Key: Without which we cannot perform **.emit()**
-- `validator` **function**: Function for validating emitted values
+`new SecureEventEmitter(eventTypes, emitterKey, validator?)`
+
+
+- **eventTypes** `<string[]>`\
+    An non-empty array of all event types.\
+    *Examples:*
+    ```js
+    const eventTypes = ['event-1', 'event-2','event-3']
+    ```
+
+- **emitterKey** `<string>` | `<symbol>`\
+    Any string or symbol value without which we won't be able to call the `.emit()` method.\
+    *Examples:*
+    ```js
+    const emitterKey = 'my_emitter_key'
+    ```
+
+    ```js
+    const emitterKey = Symbol()
+    ```
+
+- **validator** `<Function>`\
+    Function for validating emitted values.\
+    *Examples:*
+    ```js
+    const validator = (x) => {
+        if (typeof x !== 'number') {
+            return 'Can emit only numbers!' // error message
+        }
+    }
+    ```
+
+### Example
 
 ```js
 import {SecureEventEmitter} from 'secure-event-emitter'
