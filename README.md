@@ -83,7 +83,7 @@ const validator = (x) => {
 ```js
 import {SecureEventEmitter} from 'secure-event-emitter'
 
-const eventTypes = ['event-1', 'event-2']
+const eventTypes = ['event-1']
 const emitterKey = Symbol()
 const validator = (x) => {
     if (typeof x !== 'number') {
@@ -93,16 +93,13 @@ const validator = (x) => {
 
 const myEmitter = new SecureEventEmitte(eventTypes, emitterKey, validator)
 
-myEmitter.on('event-1', (a, b) => {
-    console.log(a, b)
+myEmitter.on('event-1', (a) => {
+    console.log(a)
 })
 
-myEmitter.on('event-2', (x) => {
-    console.log(x)
-})
 
 myEmitter.unlock(emitterKey).emit('event-1', 2021)
-myEmitter.unlock(emitterKey).emit('event-2', '2021') // TypeError: Can emit only numbers!
+myEmitter.unlock(emitterKey).emit('event-1', '2021') // TypeError: Can emit only numbers!
 
 ```
 
