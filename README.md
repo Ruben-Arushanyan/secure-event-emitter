@@ -24,33 +24,14 @@ La la ala lfdfd dfdgdl  gdgd gdgd.
 
 
 - **eventTypes** `<string[]>`\
-    An non-empty array of all event types.\
-    *Examples:*
-    ```js
-    const eventTypes = ['event-1', 'event-2','event-3']
-    ```
+    An non-empty array of all event types.
 
 - **emitterKey** `<string>` | `<symbol>`\
-    Any string or symbol value without which we won't be able to call the `.emit()` method.\
-    *Examples:*
-    ```js
-    const emitterKey = 'my_emitter_key'
-    ```
-
-    ```js
-    const emitterKey = Symbol()
-    ```
+    Any string or symbol value without which we won't be able to call the `.emit()` method.
 
 - **validator** `<Function>`\
-    Function for validating emitted values.\
+    Function for validating emitted values.
     *Examples:*
-    ```js
-    const validator = (x) => {
-        if (typeof x !== 'number') {
-            return 'Can emit only numbers!' // error message
-        }
-    }
-    ```
 
 ### Usage
 
