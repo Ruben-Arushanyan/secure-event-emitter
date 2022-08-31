@@ -18,8 +18,13 @@ npm install secure-event-emitter
 
 ## SecureEventEmitter
 
-La la ala lfdfd dfdgdl  gdgd gdgd.
+SecureEventEmitter is the main constructor for creating emitter instances.
 
+### Import
+
+```js
+import {SecureEventEmitter} from 'secure-event-emitter'
+```
 ### Syntax
 #### `new SecureEventEmitter(eventTypes, emitterKey, validator?)`
 
