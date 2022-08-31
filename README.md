@@ -38,8 +38,6 @@ import {SecureEventEmitter} from 'secure-event-emitter'
 - **validator** `<Function>`\
     Function for validating emitted values.
 
-### Usage
-
 ```js
 import {SecureEventEmitter} from 'secure-event-emitter'
 
@@ -61,7 +59,7 @@ myEmitter.unlock(emitterKey).emit('event-2', 123)
 
 ```
 
-### Validator Function
+### Validator
 
 ```js
 import {SecureEventEmitter} from 'secure-event-emitter'
