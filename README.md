@@ -23,15 +23,11 @@ La la ala lfdfd dfdgdl  gdgd gdgd.
 #### `new SecureEventEmitter(eventTypes, emitterKey, validator?)`
 
 
-- **eventTypes** `<string[]>`\
-    An non-empty array of all event types.
+- **eventTypes** `<string[]>` An non-empty array of all event types.
 
-- **emitterKey** `<string>` | `<symbol>`\
-    Any string or symbol value without which we won't be able to call the `.emit()` method.
+- **emitterKey** `<string>` | `<symbol>` Any string or symbol value without which we won't be able to call the `.emit()` method.
 
-- **validator** `<Function>`\
-    Function for validating emitted values.
-    *Examples:*
+- **validator** `<Function>` Function for validating emitted values.
 
 ### Usage
 
