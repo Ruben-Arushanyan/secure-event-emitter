@@ -22,7 +22,7 @@ La la ala lfdfd dfdgdl  gdgd gdgd.
 
 ### API
 
-`new SecureEventEmitter(eventTypes, emitterKey, validator?)`
+**`new SecureEventEmitter(eventTypes, emitterKey, validator?)`**
 
 
 - **eventTypes** `<string[]>`\
