@@ -20,34 +20,6 @@ npm install secure-event-emitter
 
 La la ala lfdfd dfdgdl  gdgd gdgd.
 
-### Example
-
-```js
-import {SecureEventEmitter} from 'secure-event-emitter'
-
-// create emitterKey
-const emitterKey = Symbol()
-
-// create myEmitter instance
-const myEmitter = new SecureEventEmitter(
-    ['event-1', 'event-2'], // all event types
-    emitterKey      // emitter key is an any Symbol or String type value
-)
-
-// add listeners
-myEmitter.on('event-1', (a, b) => {
-    console.log(a, b)
-})
-myEmitter.on('event-2', (x) => {
-    console.log(x)
-})
-
-myEmitter.unlock(emitterKey).emit('event-1', 2021, 2022)
-myEmitter.unlock(emitterKey).emit('event-2', 123)
-
-```
-### API
-
 #### `new SecureEventEmitter(eventTypes, emitterKey, validator?)`
 
 
@@ -80,6 +52,32 @@ myEmitter.unlock(emitterKey).emit('event-2', 123)
     }
     ```
 
+### Usage
+
+```js
+import {SecureEventEmitter} from 'secure-event-emitter'
+
+// create emitterKey
+const emitterKey = Symbol()
+
+// create myEmitter instance
+const myEmitter = new SecureEventEmitter(
+    ['event-1', 'event-2'], // all event types
+    emitterKey      // emitter key is an any Symbol or String type value
+)
+
+// add listeners
+myEmitter.on('event-1', (a, b) => {
+    console.log(a, b)
+})
+myEmitter.on('event-2', (x) => {
+    console.log(x)
+})
+
+myEmitter.unlock(emitterKey).emit('event-1', 2021, 2022)
+myEmitter.unlock(emitterKey).emit('event-2', 123)
+
+```
 
 ### Validator Function
 
