@@ -20,6 +20,7 @@ npm install secure-event-emitter
 
 La la ala lfdfd dfdgdl  gdgd gdgd.
 
+### Syntax
 #### `new SecureEventEmitter(eventTypes, emitterKey, validator?)`
 
 
