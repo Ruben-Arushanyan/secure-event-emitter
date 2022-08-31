@@ -41,7 +41,7 @@ import {SecureEventEmitter} from 'secure-event-emitter'
 const eventTypes = ['event-1', 'event-2']
 const emitterKey = Symbol()
 
-const myEmitter = new SecureEventEmitte(eventTypes,emitterKey)
+const myEmitter = new SecureEventEmitte(eventTypes, emitterKey)
 
 myEmitter.on('event-1', (a, b) => {
     console.log(a, b)
