@@ -38,7 +38,7 @@ import {SecureEventEmitter} from 'secure-event-emitter'
 - **validator** `<Function>`\
     Function to validate the emitted values․ The function receives the emitted values in the argument and returns an error message if something is wrong there.
 
-#### Example
+#### Usage
 
 ```js
 import {SecureEventEmitter} from 'secure-event-emitter'
