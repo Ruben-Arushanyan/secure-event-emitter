@@ -38,6 +38,8 @@ import {SecureEventEmitter} from 'secure-event-emitter'
 - **validator** `<Function>`\
     Function for validating emitted values.
 
+### Example
+
 ```js
 import {SecureEventEmitter} from 'secure-event-emitter'
 
