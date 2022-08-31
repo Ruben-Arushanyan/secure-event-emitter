@@ -36,7 +36,7 @@ import {SecureEventEmitter} from 'secure-event-emitter'
     Any string or symbol value without which we won't be able to call the `.emit()` method.
 
 - **validator** `<Function>`\
-    Function for validating emitted values.
+    Function to validate the emitted values․ The function receives the emitted values in the argument and returns an error message if something is wrong there.
 
 #### Example
 
@@ -62,6 +62,10 @@ myEmitter.unlock(emitterKey).emit('event-2', 123)
 ```
 
 ### Validator
+
+We can define a validator function to validate the emitted values.
+
+The function receives the emitted values in the argument and returns an error message if something is wrong there.
 
 ```js
 import {SecureEventEmitter} from 'secure-event-emitter'
