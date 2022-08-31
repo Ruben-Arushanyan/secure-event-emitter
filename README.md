@@ -69,6 +69,8 @@ The function receives the emitted values in the argument and returns an error me
 
 #### Example
 
+This example defines a validator function that ensures that the emitter can emit only numbers.
+
 ```js
 const validator = (x) => {
     if (typeof x !== 'number') {
