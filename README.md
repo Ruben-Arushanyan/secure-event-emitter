@@ -67,30 +67,34 @@ We can define a validator function to validate the emitted values.
 
 The function receives the emitted values in the argument and returns an error message if something is wrong there.
 
+#### Example
+
+```js
+const validator = (x) => {
+    if (typeof x !== 'number') {
+        return 'Can emit only numbers!' // error message
+    }
+}
+```
+#### Usage
+
 ```js
 import {SecureEventEmitter} from 'secure-event-emitter'
 
-// create emitterKey
+const eventTypes = ['event-1', 'event-2']
 const emitterKey = Symbol()
-
-// create validator function
 const validator = (x) => {
     if (typeof x !== 'number') {
         return 'Can emit only numbers!' // error message
     }
 }
 
-// create myEmitter instance
-const myEmitter = new SecureEventEmitter(
-    ['event-1', 'event-2'],
-    emitterKey,
-    validator,
-)
+const myEmitter = new SecureEventEmitte(eventTypes, emitterKey, validator)
 
-// add listeners
-myEmitter.on('event-1', (x) => {
-    console.log(x)
+myEmitter.on('event-1', (a, b) => {
+    console.log(a, b)
 })
+
 myEmitter.on('event-2', (x) => {
     console.log(x)
 })
