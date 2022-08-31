@@ -7,8 +7,8 @@
 ## The Main Features
 
 - All event types that the emitter can use must be defined․
-- We can not emit events anywhere without emitterKey․
-- We can define a strict payload structure and emitter can only work with that structured data
+- We cannot emit events anywhere without emitterKey․
+- We can define a validator function to validate the emitted values.
 
 ## Installation
 
