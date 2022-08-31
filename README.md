@@ -25,7 +25,7 @@ SecureEventEmitter is the main constructor for creating emitter instances.
 ```js
 import {SecureEventEmitter} from 'secure-event-emitter'
 ```
-### Syntax
+#### Syntax
 #### `new SecureEventEmitter(eventTypes, emitterKey, validator?)`
 
 
@@ -38,7 +38,7 @@ import {SecureEventEmitter} from 'secure-event-emitter'
 - **validator** `<Function>`\
     Function for validating emitted values.
 
-### Example
+#### Example
 
 ```js
 import {SecureEventEmitter} from 'secure-event-emitter'
