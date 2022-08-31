@@ -38,19 +38,15 @@ La la ala lfdfd dfdgdl  gdgd gdgd.
 ```js
 import {SecureEventEmitter} from 'secure-event-emitter'
 
-// create emitterKey
+const eventTypes = ['event-1', 'event-2']
 const emitterKey = Symbol()
 
-// create myEmitter instance
-const myEmitter = new SecureEventEmitter(
-    ['event-1', 'event-2'], // all event types
-    emitterKey      // emitter key is an any Symbol or String type value
-)
+const myEmitter = new SecureEventEmitte(eventTypes,emitterKey)
 
-// add listeners
 myEmitter.on('event-1', (a, b) => {
     console.log(a, b)
 })
+
 myEmitter.on('event-2', (x) => {
     console.log(x)
 })
