@@ -1,6 +1,6 @@
 # [Secure Event Emitter](https://secure-event-emitter.js.org)
 
-> You can find the full documentation on the [website](https://secure-event-emitter.js.org)
+> You can find the full documentation on the <https://secure-event-emitter.js.org>
 
 **secure-event-emitter** is a tiny javascript package that uses restrict rules and mechanisms to build safer and protected event-driven architecture. It's similar to nodejs [EventEmitter](https://nodejs.org/api/events.html), but dictates stricter rules to prevent misuse.
 
