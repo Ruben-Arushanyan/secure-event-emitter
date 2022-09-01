@@ -16,6 +16,9 @@
 npm install secure-event-emitter
 ```
 
+<br/>
+<br/>
+
 ## SecureEventEmitter
 
 SecureEventEmitter is the main constructor for creating emitter instances.
