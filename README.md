@@ -48,7 +48,7 @@ import {SecureEventEmitter} from 'secure-event-emitter'
 const eventTypes = ['event-1', 'event-2']
 const emitterKey = Symbol()
 
-const myEmitter = new SecureEventEmitte(eventTypes, emitterKey)
+const myEmitter = new SecureEventEmitter(eventTypes, emitterKey)
 
 myEmitter.on('event-1', (a, b) => {
     console.log(a, b)
@@ -95,7 +95,7 @@ const validator = (x) => {
     }
 }
 
-const myEmitter = new SecureEventEmitte(eventTypes, emitterKey, validator)
+const myEmitter = new SecureEventEmitter(eventTypes, emitterKey, validator)
 
 myEmitter.on('event-1', (a) => {
     console.log(a)
