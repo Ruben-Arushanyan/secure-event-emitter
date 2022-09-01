@@ -61,6 +61,8 @@ myEmitter.unlock(emitterKey).emit('event-2', 123)
 
 ```
 
+<br/>
+
 ### Validator
 
 We can define a validator function to validate the emitted values.
@@ -102,6 +104,10 @@ myEmitter.unlock(emitterKey).emit('event-1', 2021)
 myEmitter.unlock(emitterKey).emit('event-1', '2021') // TypeError: Can emit only numbers!
 
 ```
+
+<br/>
+<br/>
+<br/>
 
 ## SingularEventEmitter
 
