@@ -107,7 +107,6 @@ myEmitter.unlock(emitterKey).emit('event-1', '2021') // TypeError: Can emit only
 
 <br/>
 <br/>
-<br/>
 
 ## SingularEventEmitter
 
