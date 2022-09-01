@@ -6,9 +6,9 @@
 
 ## The Main Features
 
-- All event types that the emitter can use must be defined․
-- We cannot emit events anywhere without emitterKey․
-- We can define a validator function to validate the emitted values.
+- All event types must be **predefined**․
+- Not possible to call the `emit()` method anywhere without the **emitterKey**.
+- Ability to **validate** emitted values․
 
 ## Installation
 
