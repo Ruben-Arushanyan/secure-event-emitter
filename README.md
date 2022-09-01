@@ -1,14 +1,14 @@
 # [Secure Event Emitter](https://secure-event-emitter.js.org)
 
-> You can find the full documentation on the [website](https://secure-event-emitter.js.org)
+> You can find the full documentation on the <https://secure-event-emitter.js.org>
 
 **secure-event-emitter** is a tiny javascript package that uses restrict rules and mechanisms to build safer and protected event-driven architecture. It's similar to nodejs [EventEmitter](https://nodejs.org/api/events.html), but dictates stricter rules to prevent misuse.
 
 ## The Main Features
 
-- All event types that the emitter can use must be defined․
-- We can not emit events anywhere without emitterKey․
-- We can define a strict payload structure and emitter can only work with that structured data
+- All event types must be **predefined**․
+- Not possible to call the `emit()` method anywhere without the **emitterKey**.
+- Ability to **validate** emitted values․
 
 ## Installation
 
@@ -16,32 +16,44 @@
 npm install secure-event-emitter
 ```
 
-## Usage
+<br/>
 
-### Class:  `SecureEventEmitter`
+## SecureEventEmitter
 
-> ### `new SecureEventEmitter(types, emitterKey, [validator])`
+SecureEventEmitter is the main constructor for creating emitter instances.
 
-- `types` **string[]**  : All event types․
-- `emitterKey` **string | symbol** : Emitter Key: Without which we cannot perform **.emit()**
-- `validator` **function**: Function for validating emitted values
+#### Import
+
+```js
+import {SecureEventEmitter} from 'secure-event-emitter'
+```
+#### Syntax
+#### `new SecureEventEmitter(eventTypes, emitterKey, validator?)`
+
+
+- **eventTypes** `<string[]>`  
+    An non-empty array of all event types.
+
+- **emitterKey** `<string>` | `<symbol>`  
+    Any string or symbol value without which we won't be able to call the `.emit()` method.
+
+- **validator** `<Function>`  
+    Function to validate the emitted values․ The function receives the emitted values in the argument and returns an error message if something is wrong there.
+
+#### Usage
 
 ```js
 import {SecureEventEmitter} from 'secure-event-emitter'
 
-// create emitterKey
+const eventTypes = ['event-1', 'event-2']
 const emitterKey = Symbol()
 
-// create myEmitter instance
-const myEmitter = new SecureEventEmitter(
-    ['event-1', 'event-2'], // all event types
-    emitterKey      // emitter key is an any Symbol or String type value
-)
+const myEmitter = new SecureEventEmitter(eventTypes, emitterKey)
 
-// add listeners
 myEmitter.on('event-1', (a, b) => {
     console.log(a, b)
 })
+
 myEmitter.on('event-2', (x) => {
     console.log(x)
 })
@@ -51,40 +63,52 @@ myEmitter.unlock(emitterKey).emit('event-2', 123)
 
 ```
 
-### Validator Function
+<br/>
+
+### Validator
+
+We can define a validator function to validate the emitted values.
+
+The function receives the emitted values in the argument and returns an error message if something is wrong there.
+
+#### Example
+
+This example defines a validator function that ensures that the emitter can emit only numbers.
+
+```js
+const validator = (x) => {
+    if (typeof x !== 'number') {
+        return 'Can emit only numbers!' // error message
+    }
+}
+```
+#### Usage
 
 ```js
 import {SecureEventEmitter} from 'secure-event-emitter'
 
-// create emitterKey
+const eventTypes = ['event-1']
 const emitterKey = Symbol()
-
-// create validator function
 const validator = (x) => {
     if (typeof x !== 'number') {
         return 'Can emit only numbers!' // error message
     }
 }
 
-// create myEmitter instance
-const myEmitter = new SecureEventEmitter(
-    ['event-1', 'event-2'],
-    emitterKey,
-    validator,
-)
+const myEmitter = new SecureEventEmitter(eventTypes, emitterKey, validator)
 
-// add listeners
-myEmitter.on('event-1', (x) => {
-    console.log(x)
+myEmitter.on('event-1', (a) => {
+    console.log(a)
 })
-myEmitter.on('event-2', (x) => {
-    console.log(x)
-})
+
 
 myEmitter.unlock(emitterKey).emit('event-1', 2021)
-myEmitter.unlock(emitterKey).emit('event-2', '2021') // TypeError: Can emit only numbers!
+myEmitter.unlock(emitterKey).emit('event-1', '2021') // TypeError: Can emit only numbers!
 
 ```
+
+<br/>
+<br/>
 
 ## SingularEventEmitter
 
