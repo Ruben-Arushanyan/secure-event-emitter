@@ -31,13 +31,13 @@ import {SecureEventEmitter} from 'secure-event-emitter'
 #### `new SecureEventEmitter(eventTypes, emitterKey, validator?)`
 
 
-- **eventTypes** `<string[]>`\
+- **eventTypes** `<string[]>`  
     An non-empty array of all event types.
 
-- **emitterKey** `<string>` | `<symbol>`\
+- **emitterKey** `<string>` | `<symbol>`  
     Any string or symbol value without which we won't be able to call the `.emit()` method.
 
-- **validator** `<Function>`\
+- **validator** `<Function>`  
     Function to validate the emitted values․ The function receives the emitted values in the argument and returns an error message if something is wrong there.
 
 #### Usage

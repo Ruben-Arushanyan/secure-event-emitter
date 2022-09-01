@@ -1,38 +1,41 @@
 ---
 sidebar_position: 2
-title: SecureEventEmitter
 ---
 
-# Class:  `SecureEventEmitter`
+SecureEventEmitter is the main constructor for creating emitter instances.
 
-## API
+## Import
 
-### `new SecureEventEmitter(types, emitterKey, [validator])`
+```js
+import {SecureEventEmitter} from 'secure-event-emitter'
+```
+## Syntax
+### `new SecureEventEmitter(eventTypes, emitterKey, validator?)`
 
 
-- `types` **string[]**  : All event types․
-- `emitterKey` **string | symbol** : Emitter Key: Without which we cannot perform **.emit()**
-- `validator` **function**: Function for validating emitted values
+- **eventTypes** `<string[]>`  
+    An non-empty array of all event types.
 
+- **emitterKey** `<string>` | `<symbol>`  
+    Any string or symbol value without which we won't be able to call the `.emit()` method.
 
-## Usage Example
+- **validator** `<Function>`  
+    Function to validate the emitted values․ The function receives the emitted values in the argument and returns an error message if something is wrong there.
+
+## Usage
 
 ```js
 import {SecureEventEmitter} from 'secure-event-emitter'
 
-// create emitterKey
+const eventTypes = ['event-1', 'event-2']
 const emitterKey = Symbol()
 
-// create myEmitter instance
-const myEmitter = new SecureEventEmitter(
-    ['event-1', 'event-2'], // all event types
-    emitterKey      // emitter key is an any Symbol or String type value
-)
+const myEmitter = new SecureEventEmitter(eventTypes, emitterKey)
 
-// add listeners
 myEmitter.on('event-1', (a, b) => {
     console.log(a, b)
 })
+
 myEmitter.on('event-2', (x) => {
     console.log(x)
 })
