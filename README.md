@@ -17,7 +17,6 @@ npm install secure-event-emitter
 ```
 
 <br/>
-<br/>
 
 ## SecureEventEmitter
 
