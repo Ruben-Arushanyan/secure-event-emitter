@@ -1,6 +1,6 @@
 {
   "name": "secure-event-emitter",
-  "version": "4.3.4",
+  "version": "4.3.5",
   "description": "SecureEventEmitter is a tiny javascript package that uses restrict rules and mechanisms to build safer and protected event-driven architecture. It's similar to nodejs EventEmitter, but dictates stricter rules to prevent misuse.",
   "license": "MIT",
   "homepage": "https://secure-event-emitter.js.org",
