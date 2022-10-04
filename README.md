@@ -173,25 +173,6 @@ const payload_2 = new Payload(Symbol('My Origin 2'), 'a', 'b')
 
 ```
 
-## Handler
-
-**Handler** is a decorator function that accepts a function and returns a function that can only accept Payload instances in its argument.
-
-### basic usage
-
-```js
-import {Handler, Payload} from 'secure-event-emitter'
-
-const myHandler = Handler((payload) => {
-    // ...
-})
-
-myHandler(new Payload(Symbol('my origin'), 1, 2, 3)) // OK
-myHandler(2021) // TypeError('handler argument type must be a [[Payload]] class objects')
-
-
-```
-
 ## useListener
 
 **useListener** is a helper hook for use emitter in react component
